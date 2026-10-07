@@ -1,0 +1,65 @@
+{
+  "name": "env-worktree-sync",
+  "version": "0.0.1",
+  "description": "Ensure a .env file exists: skip if present, symlink it from the main repo inside git worktrees, otherwise generate it with your secret manager command (Doppler, 1Password, Infisical, Vault).",
+  "type": "module",
+  "license": "MIT",
+  "author": "binochoi",
+  "homepage": "https://github.com/binochoi/env-worktree-sync#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binochoi/env-worktree-sync.git"
+  },
+  "bugs": {
+    "url": "https://github.com/binochoi/env-worktree-sync/issues"
+  },
+  "keywords": [
+    "env-worktree-sync",
+    "env",
+    "dotenv",
+    "env-file",
+    "dotenv-cli",
+    "ensure-env",
+    "env-setup",
+    "bootstrap-env",
+    "git-worktree",
+    "worktree",
+    "git-worktrees",
+    "symlink",
+    "secrets",
+    "secret-management",
+    "doppler",
+    "1password",
+    "infisical",
+    "vault",
+    "monorepo",
+    "postinstall",
+    "prepare",
+    "pnpm",
+    "dev-setup",
+    "ai-agent",
+    "coding-agent",
+    "claude-code",
+    "cursor",
+    "cli"
+  ],
+  "bin": {
+    "env-worktree-sync": "./dist/cli.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "obuild --stub",
+    "build:dist": "obuild",
+    "release": "pnpm build:dist && pnpm publish --ignore-scripts",
+    "clean": "rm -rf dist node_modules .turbo",
+    "lint": "oxlint ./src && tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "obuild": "^0.4.38",
+    "oxlint": "^1.67.0",
+    "typescript": "^7.0.2"
+  }
+}
